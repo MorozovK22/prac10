@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Міський Електротранспорт</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🚋 Електротранспорт</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#schedule">Розклад</a></li>
+                <li><a href="#tickets">Квитки</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Міський електротранспорт – зручно та екологічно</h1>
+        <p>Перевезення, що з'єднують ваше місто</p>
+        <button onclick="scrollToSection('about')">Дізнатись більше</button>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Про нас</h2>
+        <p>Ми пропонуємо екологічний та зручний транспорт для всіх мешканців міста. Наші трамваї та тролейбуси допоможуть вам швидко дістатись до місця призначення.</p>
+        <img src="tram.jpg" alt="Трамвай на вулиці">
+    </section>
+
+    <section id="schedule" class="schedule">
+        <h2>Розклад</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Маршрут</th>
+                    <th>Час</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Трамвай №1</td><td>08:00, 09:00, 10:00</td></tr>
+                <tr><td>Тролейбус №3</td><td>07:30, 08:30, 09:30</td></tr>
+                <tr><td>Трамвай №2</td><td>09:15, 10:15, 11:15</td></tr>
+                <tr><td>Тролейбус №4</td><td>07:45, 08:45, 09:45</td></tr>
+                <tr><td>Трамвай №5</td><td>08:20, 09:20, 10:20</td></tr>
+                <tr><td>Тролейбус №6</td><td>06:30, 07:30, 08:30</td></tr>
+                <tr><td>Трамвай №7</td><td>10:00, 11:00, 12:00</td></tr>
+                <tr><td>Тролейбус №8</td><td>08:00, 09:00, 10:00</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="tickets" class="tickets">
+        <h2>Квитки</h2>
+        <p>Ви можете придбати квитки онлайн за допомогою нашого сервісу.</p>
+        <button onclick="openModal()">Купити квиток</button>
+    </section>
+
+    <!-- Модальное окно -->
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Купівля квитка</h2>
+            <form>
+                <label for="route">Маршрут:</label>
+                <select id="route" name="route" required>
+                    <option value="Трамвай №1">Трамвай №1</option>
+                    <option value="Тролейбус №3">Тролейбус №3</option>
+                    <option value="Трамвай №2">Трамвай №2</option>
+                    <option value="Тролейбус №4">Тролейбус №4</option>
+                </select>
+                <label for="date">Дата:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="tickets">Кількість квитків:</label>
+                <input type="number" id="tickets" name="tickets" min="1" max="10" required>
+                <button type="submit">Придбати</button>
+            </form>
+        </div>
+    </div>
+
+    <section id="contact" class="contact">
+        <h2>Контакти</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Ваше ім'я:</label>
+                <input type="text" id="name" name="name" placeholder="Введіть ваше ім'я" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Ваш Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Повідомлення:</label>
+                <textarea id="message" name="message" placeholder="Введіть ваше повідомлення" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Відправити</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
